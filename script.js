@@ -62,6 +62,9 @@ const MESSAGES = [
   "This note thinks you're amazing."
 ];
 
+/*  💫  Pool of emojis that appear on the balls  */
+const EMOJIS = ["🎁","💖","🍬","🌟","🎈","🍭","💌","🎉","🧸","🪄"];
+
 let rail, claw, ballArea, dropBtn, modal, msgTxt, closeBtn;
 let dir = 1;             // patrol direction (1 = right, -1 = left)
 let dropping = false;
@@ -99,6 +102,7 @@ function spawnBalls() {
     div.className = `ball palette-${i % 6}`;
     ballArea.appendChild(div);
 
+    div.dataset.emoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
     const col = i % cols;
     const row = Math.floor(i / cols);
     const x   = pad + col * cellW + Math.random() * (cellW - 40 - pad * 2);
