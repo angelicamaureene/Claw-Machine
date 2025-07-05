@@ -1,0 +1,52 @@
+/* Layout --------------------------------------------------------- */
+body {
+  font-family: system-ui, sans-serif; background:#fefaf5; text-align:center;
+  margin:0; padding:0 0 3rem;
+}
+.title { margin:1rem 0; font-size:2rem; }
+
+#game { position:relative; width:320px; height:440px; margin:0 auto; }
+
+#rail {
+  position:absolute; top:0; left:0; right:0; height:40px;
+  background:#ccc; border-bottom:4px solid #888;
+}
+#claw {
+  --x: 0px;               /* updated by JS */
+  position:absolute; top:0; left:var(--x); width:40px; height:40px;
+  transition:left 0.15s linear;
+}
+.prong {
+  position:absolute; top:14px; width:6px; height:26px; background:#333;
+}
+.prong.left  { left:4px; transform:rotate(20deg); transform-origin:top left; }
+.prong.right { right:4px; transform:rotate(-20deg); transform-origin:top right; }
+
+#bin {
+  position:absolute; left:0; right:0; bottom:0; height:60px;
+  background:#e3d5c9; border-top:4px solid #bbaea4;
+}
+
+/* Balls ---------------------------------------------------------- */
+.ball {
+  position:absolute; width:38px; height:38px; border-radius:50%;
+  display:flex; justify-content:center; align-items:center;
+  font-size:1.25rem; color:#fff; user-select:none;
+  transition:top 0.4s linear, left 0.4s linear;
+}
+.ball::after { content:"🎁"; }   /* gift emoji sits on top */
+
+/* Simple candy‑striped palette */
+.palette-0 { background:#ff6b6b; }
+.palette-1 { background:#ffa94d; }
+.palette-2 { background:#ffd43b; color:#333; }
+.palette-3 { background:#51cf66; }
+.palette-4 { background:#339af0; }
+.palette-5 { background:#845ef7; }
+
+/* Dialog --------------------------------------------------------- */
+dialog {
+  border:none; padding:1.5rem 2rem; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.2);
+  animation:pop 0.25s ease;
+}
+@keyframes pop { from{transform:scale(.8); opacity:0;} to{transform:scale(1);opacity:1;} }
