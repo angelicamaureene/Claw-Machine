@@ -84,7 +84,15 @@ function init() {
   closeBtn  = document.getElementById("close-btn");
 
   dropBtn.addEventListener("click", dropClaw);
-  closeBtn.addEventListener("click", () => modal.close());
+  closeBtn.addEventListener("click", () => {
+  modal.close();
+
+  /* If no balls left in cabinet, start a new round */
+  if (balls.length === 0) {
+    resetGame();
+  }
+});
+
 
   availableMsgs = shuffle([...MESSAGES]);   // fresh copy & shuffle
   spawnBalls();
@@ -209,6 +217,24 @@ function resetClaw() {
   claw.style.top = "0px";
   dropping = false;
   dropBtn.disabled = false;
+}
+/* --------------------------------------------------------------
+   RESET THE GAME once all balls have been collected
+   -------------------------------------------------------------- */
+function resetGame() {
+  /* 1. Clear the bin */
+  const bin = document.getElementById("bin");
+  while (bin.firstChild) bin.removeChild(bin.firstChild);
+
+  /* 2. Clear the playfield */
+  while (ballArea.firstChild) ballArea.removeChild(ballArea.firstChild);
+
+  /* 3. Reset message pool & ball list */
+  availableMsgs = shuffle([...MESSAGES]);
+  balls = [];
+
+  /* 4. Spawn a brand‑new cabinet full of balls */
+  spawnBalls();
 }
 
 /* Helpers ---------------------------------------------------------- */
