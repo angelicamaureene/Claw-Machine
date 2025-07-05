@@ -3,11 +3,6 @@
  *  Mechanics kept simple on purpose – tweak numbers to taste!
  ***********************************************************************/
 
-const NUM_BALLS = MESSAGES.length;          // keep small so success is easy
-const CLAW_SPEED = 3;         // px per frame (left‑right patrol)
-const DROP_SPEED = 4;         // px per frame when dropping
-const FRAME = 16;             // ~60 fps
-
 // 50 curated notes (add / edit freely)
 const MESSAGES = [
   "Romance is not dead if you keep it just yours - Paris, Taylor Swift - Even though we’re not public with everyone in our lives, I wouldn’t care less because it’s just as real even in secret",
@@ -54,8 +49,15 @@ const MESSAGES = [
  
 ];
 
-/*  💫  Pool of emojis that appear on the balls  */
+/* one pastel ball per message */
+const NUM_BALLS = MESSAGES.length;
+
+/* 💫 emoji pool for the badges */
 const EMOJIS = ["🎁","💖","🍬","🌟","🎈","🍭","💌","🎉","🧸","🪄"];
+
+const CLAW_SPEED = 3;   // px per frame (left‑right patrol)
+const DROP_SPEED = 4;   // px per frame when dropping
+const FRAME      = 16;  // ~60 fps
 
 let rail, claw, ballArea, dropBtn, modal, msgTxt, closeBtn;
 let dir = 1;             // patrol direction (1 = right, -1 = left)
