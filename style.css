@@ -83,7 +83,11 @@ body{
   font-size:1.25rem;color:#fff;user-select:none;
   transition:top .4s linear,left .4s linear;
 }
-.ball::after{content:"🎁";}
+/* Show whatever emoji is stored in the data‑emoji attribute */
+.ball::after {
+  content: attr(data-emoji);
+}
+
 
 .palette-0{background:var(--ball‑1);}
 .palette-1{background:var(--ball‑2);}
