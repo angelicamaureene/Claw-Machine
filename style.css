@@ -1,52 +1,127 @@
-/* Layout --------------------------------------------------------- */
-body {
-  font-family: system-ui, sans-serif; background:#fefaf5; text-align:center;
-  margin:0; padding:0 0 3rem;
-}
-.title { margin:1rem 0; font-size:2rem; }
+/* ---------------------------------------------------------------
+   PASTEL PINK × PASTEL YELLOW THEME
+   --------------------------------------------------------------- */
 
-#game { position:relative; width:320px; height:440px; margin:0 auto; }
+/* Global -------------------------------------------------------- */
+:root{
+  --pink‑light:   #FFF6F9;  /* page background */
+  --pink:         #FAD0E9;  /* cabinet border & rail */
+  --pink‑deep:    #E7A8CE;  /* accents / dark lines */
 
-#rail {
-  position:absolute; top:0; left:0; right:0; height:40px;
-  background:#ccc; border-bottom:4px solid #888;
-}
-#claw {
-  --x: 0px;               /* updated by JS */
-  position:absolute; top:0; left:var(--x); width:40px; height:40px;
-  transition:left 0.15s linear;
-}
-.prong {
-  position:absolute; top:14px; width:6px; height:26px; background:#333;
-}
-.prong.left  { left:4px; transform:rotate(20deg); transform-origin:top left; }
-.prong.right { right:4px; transform:rotate(-20deg); transform-origin:top right; }
+  --yellow‑light: #FFF9E8;  /* cabinet interior */
+  --yellow:       #FFEFD1;  /* bin */
+  --yellow‑deep:  #F4DDA0;  /* bin border */
 
-#bin {
-  position:absolute; left:0; right:0; bottom:0; height:60px;
-  background:#e3d5c9; border-top:4px solid #bbaea4;
+  /* Pastel ball palette */
+  --ball‑1: #FFADC6; /* pastel pink  */
+  --ball‑2: #FFD6A5; /* pastel peach */
+  --ball‑3: #FFF3B0; /* pastel yellow*/
+  --ball‑4: #B5EAD7; /* pastel mint  */
+  --ball‑5: #C7D9FF; /* pastel blue  */
+  --ball‑6: #E2C6FF; /* pastel lilac */
 }
 
-/* Balls ---------------------------------------------------------- */
-.ball {
-  position:absolute; width:38px; height:38px; border-radius:50%;
-  display:flex; justify-content:center; align-items:center;
-  font-size:1.25rem; color:#fff; user-select:none;
-  transition:top 0.4s linear, left 0.4s linear;
+body{
+  font-family:system-ui,sans-serif;
+  background:var(--pink‑light);
+  text-align:center;
+  margin:0;
+  padding:0 0 3rem;
+  color:#444;
 }
-.ball::after { content:"🎁"; }   /* gift emoji sits on top */
+.title{margin:1rem 0;font-size:2rem;letter-spacing:.5px;}
 
-/* Simple candy‑striped palette */
-.palette-0 { background:#ff6b6b; }
-.palette-1 { background:#ffa94d; }
-.palette-2 { background:#ffd43b; color:#333; }
-.palette-3 { background:#51cf66; }
-.palette-4 { background:#339af0; }
-.palette-5 { background:#845ef7; }
-
-/* Dialog --------------------------------------------------------- */
-dialog {
-  border:none; padding:1.5rem 2rem; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.2);
-  animation:pop 0.25s ease;
+/* ---------------------------------------------------------------
+   Machine Cabinet
+   --------------------------------------------------------------- */
+#game{
+  position:relative;
+  width:320px;
+  height:540px;
+  margin:0 auto;
+  border:6px solid var(--pink);
+  border-radius:12px;
+  background:var(--yellow‑light);
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
 }
-@keyframes pop { from{transform:scale(.8); opacity:0;} to{transform:scale(1);opacity:1;} }
+
+/* Rail & Claw ----------------------------------------------------*/
+#rail{
+  position:absolute;top:0;left:0;right:0;height:40px;
+  background:var(--pink);
+  border-bottom:4px solid var(--pink‑deep);
+}
+#claw{
+  --x:0px;
+  position:absolute;top:0;left:var(--x);width:40px;height:40px;
+  transition:left .15s linear;
+}
+.prong{
+  position:absolute;top:14px;width:6px;height:26px;
+  background:var(--pink‑deep);
+}
+.prong.left {left:4px;transform:rotate(20deg);transform-origin:top left;}
+.prong.right{right:4px;transform:rotate(-20deg);transform-origin:top right;}
+
+/* Playfield ------------------------------------------------------*/
+#ball-area{
+  position:absolute;top:40px;left:0;right:0;bottom:60px;
+  overflow:hidden;                /* keeps balls inside */
+}
+
+/* Prize Bin ------------------------------------------------------*/
+#bin{
+  position:absolute;left:0;right:0;bottom:0;height:60px;
+  background:var(--yellow);
+  border-top:4px solid var(--yellow‑deep);
+}
+
+/* Balls ----------------------------------------------------------*/
+.ball{
+  position:absolute;width:38px;height:38px;border-radius:50%;
+  display:flex;justify-content:center;align-items:center;
+  font-size:1.25rem;color:#fff;user-select:none;
+  transition:top .4s linear,left .4s linear;
+}
+.ball::after{content:"🎁";}
+
+.palette-0{background:var(--ball‑1);}
+.palette-1{background:var(--ball‑2);}
+.palette-2{background:var(--ball‑3);color:#555;}/* darker text on yellow */
+.palette-3{background:var(--ball‑4);}
+.palette-4{background:var(--ball‑5);}
+.palette-5{background:var(--ball‑6);}
+
+/* ---------------------------------------------------------------
+   Buttons & Dialog
+   --------------------------------------------------------------- */
+#drop-btn,#close-btn{
+  cursor:pointer;
+  background:var(--pink);
+  border:none;
+  color:#444;
+  font-size:1rem;
+  padding:.6rem 1.2rem;
+  border-radius:8px;
+  box-shadow:0 3px 8px rgba(0,0,0,.15);
+  transition:transform .1s ease,box-shadow .1s ease;
+}
+#drop-btn:active,#close-btn:active{
+  transform:translateY(2px);
+  box-shadow:0 1px 4px rgba(0,0,0,.12);
+}
+#drop-btn:disabled{
+  opacity:.5;cursor:default;box-shadow:none;transform:none;
+}
+
+dialog{
+  border:none;
+  padding:1.5rem 2rem;
+  border-radius:12px;
+  background:var(--yellow‑light);
+  box-shadow:0 6px 20px rgba(0,0,0,.2);
+  animation:pop .25s ease;
+}
+@keyframes pop{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+
