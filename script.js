@@ -3,7 +3,7 @@
  *  Mechanics kept simple on purpose – tweak numbers to taste!
  ***********************************************************************/
 
-const NUM_BALLS = 6;          // keep small so success is easy
+const NUM_BALLS = MESSAGES.length;          // keep small so success is easy
 const CLAW_SPEED = 3;         // px per frame (left‑right patrol)
 const DROP_SPEED = 4;         // px per frame when dropping
 const FRAME = 16;             // ~60 fps
@@ -48,7 +48,7 @@ const MESSAGES = [
   "I would not wish any companion in the world but you - The Tempest, William Shakespeare - You’re the only company I seek ",
   "There is no charm equal to tenderness of heart - Emma, Jane Austen - Though your charm does give me second thoughts about this argument",
   "You are my silence in a world that never stops talking - Sanober Khan - The world is loud, it’s only ever quiet amidst your presence",
-  "With you, everything; without you, nothing - Amado Nero - Plain and simple,
+  "With you, everything; without you, nothing - Amado Nero - Plain and simple",
   "Your eyes are my spell against a bad day - Mario Benedetti - Most bad days turn good at just the mere thought of you, so matter of fact everyday is a good day",
   "The soul that can speak with the eyes can also kiss with a gaze - Gustavo Adolfo Becquer - Your eyes speak to me as if they come from the depths of heaven, just from one gaze I sense that heaven has touched upon me",
  
