@@ -46,7 +46,19 @@ const MESSAGES = [
   "With you, everything; without you, nothing - Amado Nero - Plain and simple",
   "Your eyes are my spell against a bad day - Mario Benedetti - Most bad days turn good at just the mere thought of you, so matter of fact everyday is a good day",
   "The soul that can speak with the eyes can also kiss with a gaze - Gustavo Adolfo Becquer - Your eyes speak to me as if they come from the depths of heaven, just from one gaze I sense that heaven has touched upon me",
- 
+  "There was a smile on her face that made me feel I had said something extraordinary. And in that moment, I believed I had - Tender is the Night, F. Scott Fitzgerald - The eyes you give me whenever I had say anything makes me feel as though I just discovered a new element when I all I said was probably the most stupidest thing ever, not only that but you remember everything, that’s just so silly of you",
+  "Always, I want to write you, kiss you, ache toward you - Vita, 1927 - More than that I want to draw you, feel you, embrace you, and cherish you, I want to know every inch of you, know you more than I know the back of my own hand",
+  "Your sweet voice - my heart groans with longing when I hear it - Fragment 88, Sapho - All I can do is quiver at excitement whenever I hear your voice, then when trying to replicate it in my head I can’t help but get goosebumps, but it can never compare to the real thing",
+  "You have made me of a sea that waits for you shore - Renee Vivien - Patiently I will wait for your presences to wash over me as the roaring seas turn gentle and soft as the shores, I shall wait cold  and vast till you pull me in out of the sea and into your shallow tides",
+  "She wanted to climb inside me, and I wanted to climb inside her - Elena Ferrante, My Brilliant Friend - For all our jokes and my insistence of a zipper, I can’t help but wish it were true so I can just crawl into you and be with you wherever you go",
+  "It’s like in that moment the whole universe existed just to bring us together - Serendipity - Wasn’t the universe just so kind to have brought you to me, or was I just so darn lucky like that",
+  "If you’re lucky enough to find a weirdo, never let them go - Modern Family - You’re my weirdo, and I don’t plan on letting you go anytime soon",
+  "I think you’re the type of person who could change someone’s life just by being in it - Heartstopper - You are baby, you truly are, you’ve changed my life for the better and I know for a fact you’ve done it for others as well",
+  "No matter how far apart we are, I’ll always come back to you - Weathering with You - Mhm, where you are in the world if you can’t get to me, I’ll get to you, no motion sickness will get in my way of getting to you, I’ll endure any types of transportation to get to you",
+  "It feels like I’ve known you forever - maybe in another life - Eternal Sunshine of the Spotless Mind - Perchance that is why our connection is so strong, but if such case is true, I’ve been lucky not only in this timeline but in a previous one as well",
+  "I see you in every quiet moment - Our Beloved Summer - Anytime I catch some peace and quiet, my head instantly goes towards thoughts of you",
+  "When I’m with you I remember how to smile - Toradora - Cannot believe the amount of reminders I receive to smile, but when I’m with you, it all just comes natural",
+  "I want to be the person you can’t stop thinking about - Normal People, Sally Rooney - More than anything I just wish to be a passing thought in your head, not to occupy every single space, but just the tiniest of space that doesn’t require much energy",
 ];
 
 /* one pastel ball per message */
