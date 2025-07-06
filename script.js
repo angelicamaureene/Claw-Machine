@@ -128,22 +128,37 @@ function init() {
   requestAnimationFrame(loop);
 }
 
-/* Create ball DOM elements & random positions ---------------------- */
-function spawnBalls() {
-  const pad = 8, areaW = 300, areaH = 280, cols = 3;
-  const cellW = areaW / cols, cellH = areaH / Math.ceil(NUM_BALLS / cols);
+/* -------------------------------------------------------------
+   Create ball DOM elements & scatter them randomly
+   -------------------------------------------------------------*/
+function spawnBalls () {
+  const pad   = 6;                                // gap to walls
+  const W     = ballArea.clientWidth  - 40 - pad; // 40 = ball dia.
+  const H     = ballArea.clientHeight - 40 - pad;
+
+  const MAX_TRIES = 60;  // stop searching if cabinet gets crowded
 
   for (let i = 0; i < NUM_BALLS; i++) {
     const div = document.createElement("div");
     div.className = `ball palette-${i % 6}`;
+    div.dataset.emoji = EMOJIS[Math.floor(Math.random()*EMOJIS.length)];
     ballArea.appendChild(div);
 
-    div.dataset.emoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
-    const col = i % cols;
-    const row = Math.floor(i / cols);
-    const x   = pad + col * cellW + Math.random() * (cellW - 40 - pad * 2);
-    const y   = 80 + row * cellH + Math.random() * (cellH - 40 - pad * 2);
+    /* ---- pick a random non‑overlapping spot ---- */
+    let tries = 0, ok = false, x, y;
+    while (!ok && tries < MAX_TRIES) {
+      x = pad + Math.random() * W;
+      y = pad + Math.random() * H;
+      ok = balls.every(b => {
+        const bx = parseFloat(b.style.left);
+        const by = parseFloat(b.style.top);
+        const dx = bx - x, dy = by - y;
+        return Math.hypot(dx, dy) > 44;   // keep ~6 px gap
+      });
+      tries++;
+    }
 
+    /* place the ball */
     div.style.left = `${x}px`;
     div.style.top  = `${y}px`;
     balls.push(div);
