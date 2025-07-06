@@ -59,13 +59,35 @@ const MESSAGES = [
   "I see you in every quiet moment - Our Beloved Summer - Anytime I catch some peace and quiet, my head instantly goes towards thoughts of you",
   "When I’m with you I remember how to smile - Toradora - Cannot believe the amount of reminders I receive to smile, but when I’m with you, it all just comes natural",
   "I want to be the person you can’t stop thinking about - Normal People, Sally Rooney - More than anything I just wish to be a passing thought in your head, not to occupy every single space, but just the tiniest of space that doesn’t require much energy",
+  "You make it impossible not to feel - Bridgerton S1 - The feelings you give me need to studied in a lab or something because I swear they are so indescribable that they probably don’t even exist yet, truly I think you invented new feelings within me, and I personally cannot get enough",
+  "Love is not a weakness, it is a gift - Bridgerton - Truly a one of a kind gift it is. A gift I could not be more grateful for, you yourself is a gift, a gift I’m completely undeserving of and yet here you are",
+  "You are the one who makes it impossible to look away - Bridgerton S2 - Baby, you command the eyes of everyone in the room with you. I know from personal experience, once my eyes lay on you I can’t help but stare and when out in public I can’t even look at you once because it only takes one glance and I’m glued forever you don’t even understand",
+  "You are my heart, and even when my mind is lost, my heart knows you - Queen Charlotte - Sometimes I lose all thoughts and zone out, but the only thing that remains is thoughts of you and the space you occupy within my heart",
+  "I cannot breathe when you are not near, my heart calls for your name - Queen Charlotte - For someone who is asthmatic you really do take my breath away, I think I need to invest in my puffer again. When you are not near I can’t help but feel my throat restrict itself as if it’s just a bodily reaction towards your lacking presence, causing my heart to call for you all the time",
+  "There were no words. There was only the look - The Duke and I - Sometimes we don’t need words to convey what we feel, I can just stare at your eyes and already know everything we want to share",
+  "He found her hand, and when their fingers touched, it felt like home - An Offer from a Gentleman - I love your hands, my hands search for yours even when you’re not near, the soft and tenderness they exude, once parted, my hands no longer hold meaning, I just wait till I can hold yours again and kiss them senseless",
+  "It’s not like in the movies. It’s better, because it’s real - To All the Boys I’ve Loved Before - That’s absolutely the best part, I can watch a million different movies, and feel a million different things for each one, and still nothing will ever compare to the feeling I get when I’m with you and think about us and our relationship",
+  "You’re the one I want to talk to, you’re my person - To All the Boys I’ve Loved Before - You’re the only one I ever want to actually share meaningful conversation with, everything else is just all talk to pass time, yours is talk to lose track of time in. The kind that once over I’m stuck wishing for more, or for the time to reset and give me more time with you",
+  "We need that touch from the one we love, almost as much as we need air - Five Feet Apart - Just with one touch and I completely crumble in submission for you, one touch is all it takes till I’m subdued in your spell",
+  "It’s not finding your perfect half, it’s finding the other half of you - The Half of It - You’re both, all of the above and more, you’re truly my better half, the one I was always unconsciously looking and longing for, and now that I’ve found you I don’t know what life was before you",
+  "She’s beautiful, but not just the kind of beautiful you see, the kind that’s hard to look away from - The Half of It - You’re the kind that captivates me with one glance, with one pierce of the eye and I’m drowning and I can’t manage to swim back",
+  "I don’t want perfect, I want honest, I want messy. I want us - Always be my Maybe - No matter how tedious and meticulous it gets for us, I don’t care whatsoever, as long as it’s still us and we still both want us",
+  "I was stupid, and scared , and insecure, but mostly I missed you - Always be my Maybe - I can get in over my head with many things, but I’ll always make sure it doesn’t affect us negatively, but I’ll always just be missing you",
+  "Some of us get dipped in flat, some in satin, some in gloss, but very once in a while, you find someone who’s iridescent - Flipped - You, you are that iridescent rare find. There is no others like you, you shine so brightly everything else pales in comparison my love",
+  "So this is love, so this is what makes life divine - Cinderella - Life with you is more than just divine, it’s absolutely magical and twinkling in all the best ways possible. I didn’t know how just divine life could get until you",
+  "You were my new dream - Tangled - I have many dreams but now all those dreams include you, you are the most special part about all those dreams now, and that just makes me want to work even harder towards them",
+  "Now that I see you, I see everything differently - Tangled - Now everything matters in a new light, more than ever I see things as for you and I. Nothing in a single perspective but for an us perspective",
+  "My dream wouldn’t be complete without you in it - The Princess and the Frog - You’re the piece that completes it all, you complete my dreams entirely",
+  "The flower that blooms in adversity is the most rare and beautiful of all - Mulan - You are that flower, with the life you live and the way you live it, your life truly isn’t the easiest my love and I can’t help but melt in admiration with the way you lead it. Head held up high and heart hard in chest you live life in the way people write about, and that is one of the best parts about you",
+  "You’re the fairest of them all, but you’re kindness makes you beautiful - Snow White - It is not just your beauty that I can’t help but fawn over, it’s your kindness and gentleness the radiates off of you, the way you talk about your sister with such softness, the way you talk about your friends in the most admirable way and the way you talk about Naia all with strength and joy",
+  "There’s this girl, she’s smart, and- and fun and beautiful. She’s got these eyes that just- and this hair wow- and her smile awh!! - Aladdin - Every single fucking thing he just said"
 ];
 
 /* one pastel ball per message */
 const NUM_BALLS = MESSAGES.length;
 
 /* 💫 emoji pool for the badges */
-const EMOJIS = ["🎁","💖","🍬","🌟","🎈","🍭","💌","🎉","🧸","🪄"];
+const EMOJIS = ["🎁","💞","🎇","🌸","🌅","🌈","💌","🌷","🧸","🎃"];
 
 const CLAW_SPEED = 3;   // px per frame (left‑right patrol)
 const DROP_SPEED = 4;   // px per frame when dropping
